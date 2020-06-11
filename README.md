@@ -91,8 +91,8 @@ OR
             grant=None,  
             host=host,  
             dacs_username=user,
-            on_state=lambda session, state, message: print("Desktop session state: ", state, message),
-            on_event=lambda session, event, message: print("Desktop session event: ", event, message)))
+            on_state=lambda session, state, message: print("Deployed session state: ", state, message),
+            on_event=lambda session, event, message: print("Deployed session event: ", event, message)))
 ```
 OR  
 ```python
@@ -102,8 +102,8 @@ OR
             rdp.GrantPassword(
                 username=user,
                 password=password),
-            on_state=lambda session, state, message: print("Desktop session state: ", state, message),
-            on_event=lambda session, event, message: print("Desktop session event: ", event, message))
+            on_state=lambda session, state, message: print("Platform session state: ", state, message),
+            on_event=lambda session, event, message: print("Platform session event: ", event, message))
 ```
 NOTE: the `on\_state` and `on\_event` lambda functions are optional - but I like the additional feedback they provide on the state of session and any session related events - e.g. a successful connection and Login:  
 ```plaintext
