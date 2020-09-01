@@ -149,7 +149,7 @@ def send_single_domain_data_request(req_session, req_domain, ric_list):
     # increment the data items requested count
     request_cnt += len(ric_list)
     for ric in ric_list:
-        stream = rdp.OMMItemStream(session=req_session,
+        stream = rdp.ItemStream(session=req_session,
                                 domain=req_domain,
                                 name=ric,
                                 fields=view_list,
