@@ -39,9 +39,9 @@ For full disclosure - the code is derived from an earlier <a href="https://githu
     - Select the __Download tile__ for the Python 3 version
     - Run the downloaded `python-<version>` file and follow installation instructions
 2. __Install libraries__  
-    This article and example was developed and tested using an alpha version 1.0.0.a1 of the Python library - I have included the **.whl** file (as part of the GitHub Repository) which you can use. 
+    This article and example was developed and tested using the current alpha version 1.0.0.**a5** of the Python library. 
     - Run the following to install the 'refinitiv.dataplatform' library:
-        - `pip install refinitiv_dataplatform-1.0.0a1-py3-none-any.whl`
+        - `pip install refinitiv-dataplatform==1.0.0a5`
     - See the source code for the other Python libraries you may need to install
 3. __Credentials/Prerequisites__
     - As a Refinitiv Customer, you should have access to at least **one** of the following:  
