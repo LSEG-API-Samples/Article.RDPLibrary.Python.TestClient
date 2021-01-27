@@ -89,8 +89,8 @@ OR
     my_session = rdp.PlatformSession(  
             app_key=appkey,  
             grant=None,  
-            host=host,  
-            dacs_username=user,
+            deployed_platform_host=host,  
+            deployed_platform_username=user,
             on_state=lambda session, state, message: print("Deployed session state: ", state, message),
             on_event=lambda session, event, message: print("Deployed session event: ", event, message)))
 ```
@@ -354,34 +354,34 @@ Below are a few example scenarios with sample arguments
     -items VOD.L,BT.L -u \<RDP Username\> -pw \<RDP Password\> -ap \<AppKey\>  
     
 **Connect to ADS, request MarketPrice items from ELEKTRON_DD service and display summary stats**  
-    -S ELEKTRON_DD -H ads1:15000 -items VOD.L,MSFT.O,TRI.N -u umer.nalla
+    -S ELEKTRON_DD -H ads1:15000 -items VOD.L,MSFT.O,TRI.N -u umer.nalla -ap \<AppKey\>  
     
 **Connect to Eikon/Workspace, request MarketPrice items from default service and display summary stats**  
     -ap \<AppKey\> -items VOD.L,MSFT.O,TRI.N
 
 **Request MarketPrice items from default service on ADS (if one has been configured) and display summary stats**  
-    -H ads1:15000 -items VOD.L,MSFT.O,TRI.N -u umer.nalla
+    -H ads1:15000 -items VOD.L,MSFT.O,TRI.N -u umer.nalla -ap \<AppKey\>   
 
 **As above and display received data**  
-    -H ads1:15000 -items VOD.L,MSFT.O,TRI.N -u umer.nalla -X
+    -H ads1:15000 -items VOD.L,MSFT.O,TRI.N -u umer.nalla -X -ap \<AppKey\>   
 
 **As above with output redirected to file log.out**  
-    -H ads1:15000 -items VOD.L,MSFT.O,TRI.N -u umer.nalla -X -l log.out
+    -H ads1:15000 -items VOD.L,MSFT.O,TRI.N -u umer.nalla -X -l log.out -ap \<AppKey\> 
 
 **As above except request MarketByPrice data**  
-    -H ads1:15000 -md MarketByPrice -items VOD.L,BT.L,BP.L -u umer.nalla -X -l log.out
+    -H ads1:15000 -md MarketByPrice -items VOD.L,BT.L,BP.L -u umer.nalla -X -l log.out -ap \<AppKey\>   
 
 **As above except using numeric Domain value**  
-    -H ads1:15000 -md 8 -items VOD.L,BT.L,BP.L -u umer.nalla -X -l log.out
+    -H ads1:15000 -md 8 -items VOD.L,BT.L,BP.L -u umer.nalla -X -l log.out -ap \<AppKey\>  
 
 **MarketPrice request for RICs read from file srics.txt (one RIC per line)**  
-    -H ads1:15000 -f srics.txt -u umer.nalla -X -l log.out
+    -H ads1:15000 -f srics.txt -u umer.nalla -X -l log.out -ap \<AppKey\> 
 
 **MarketByOrder request for RICs read from file srics.txt (one RIC per line)**  
-    -H ads1:15000 -f srics.txt -md MarketByOrder -u umer.nalla -X -l log.out
+    -H ads1:15000 -f srics.txt -md MarketByOrder -u umer.nalla -X -l log.out -ap \<AppKey\>  
 
 **As above except mixed Domain RICs read from file extrics.txt (numeric domain|RIC per line)**  
-    -H ads1:15000 -ef extrics.txt -u umer.nalla -X -l log.out
+    -H ads1:15000 -ef extrics.txt -u umer.nalla -X -l log.out -ap \<AppKey\>  
 
 I have provided the example `srics.txt` and `extrics.txt` files for your reference
 
