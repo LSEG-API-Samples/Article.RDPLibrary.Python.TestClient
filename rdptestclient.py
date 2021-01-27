@@ -213,8 +213,8 @@ def get_session(appkey, host, user, password):
         return rdp.PlatformSession(
             app_key=appkey,
             grant=None,
-            host=host,
-            dacs_username=user,
+            deployed_platform_host=host,
+            deployed_platform_username=user,
             on_state=lambda session, state, message: print("Deployed session state: ", state, message),
             on_event=lambda session, event, message: print("Deployed session event: ", event, message))
     else:
