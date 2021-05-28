@@ -39,9 +39,11 @@ For full disclosure - the code is derived from an earlier <a href="https://githu
     - Select the __Download tile__ for the Python 3 version
     - Run the downloaded `python-<version>` file and follow installation instructions
 2. __Install libraries__  
-    This article and example was developed and tested using the current alpha version 1.0.0.**a5** of the Python library. 
+    This article and example was developed and tested using the current alpha version 1.0.0.**a8.post1** of the Python library. 
     - Run the following to install the 'refinitiv.dataplatform' library:
-        - `pip install refinitiv-dataplatform==1.0.0a5`
+        - `pip install refinitiv-dataplatform==1.0.0a8.post1`
+    - Also, we have identified **compatibility issues with recent versions of the Websocket library** so please install the following version:
+        - `pip install websocket-client==0.57.0`
     - See the source code for the other Python libraries you may need to install
 3. __Credentials/Prerequisites__
     - As a Refinitiv Customer, you should have access to at least **one** of the following:  
