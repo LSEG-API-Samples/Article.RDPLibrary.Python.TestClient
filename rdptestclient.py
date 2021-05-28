@@ -10,6 +10,7 @@ import argparse
 import logging.config
 import sys
 import time
+import asyncio
 
 import market_data
 import refinitiv.dataplatform as rdp
@@ -285,7 +286,8 @@ if __name__ == '__main__':
         while (((opts.exit_time_mins == 0) or (time.time() < end_time))
                and (not market_data.shutdown_app)):
 
-            time.sleep(1)
+            asyncio.get_event_loop().run_until_complete(asyncio.sleep(1))
+                        
             # Is is time to print some basic stats?
             if time.time() >= stat_time:
                 market_data.print_stats()
