@@ -5,14 +5,14 @@
 * [Optional Arguments](#arguments)
 * [Example Runtime Scenarios](#runtime)
 
-Before we begin, if you are not familiar with the Refinitiv Data Platform Library - you can discover more by reading my <a href="https://developers.refinitiv.com/article/discover-our-refinitiv-data-platform-library-part-1" target="_blank">earlier article</a> and by visiting the <a href="https://developers.refinitiv.com/refinitiv-data-platform/refinitiv-data-platform-libraries" target="_blank">RDP Library</a> page on the Developer Portal.
+Before we begin, if you are not familiar with the Refinitiv Data Platform Library - you can discover more by reading my <a href="https://developers.refinitiv.com/en/article-catalog/article/discover-our-refinitiv-data-platform-library-part-1" target="_blank">earlier article</a> and by visiting the <a href="https://developers.refinitiv.com/en/api-catalog/refinitiv-data-platform/refinitiv-data-platform-libraries" target="_blank">RDP Library</a> page on the Developer Portal.
 
 ### <a id="overview"></a>The Performance 
 When I demonstrate or talk about our new Refinitiv Data Platform library to developers, I often get asked about its performance characteristics - particularly concerning to Realtime streaming data - 'how performant is it?','how many RICs can I consume at once?' and so on.
 
 The *simple* answer to the above questions is '*it depends*' - as there are too many factors at play to provide any meaningful answer. Things like your environment, your internet connection, your choice of instruments, their volatility, size of update messages e.t.c
 
-Clearly, the RDP Library is not meant for high-performance Realtime streaming implementations - ones requiring the lowest latency and/or highest throughput - for that you should be looking at our C++ and Java <a href="https://developers.refinitiv.com/elektronhttps://developers.refinitiv.com/elektron" target="_blank">ElektronSDK</a> 
+Clearly, the RDP Library is not meant for high-performance Realtime streaming implementations - ones requiring the lowest latency and/or highest throughput - for that you should be looking at our C++ and Java <a href="https://developers.refinitiv.com/en/api-catalog/refinitiv-real-time-opnsrc/rt-sdk-cc" target="_blank">Real-Time SDKs</a> 
 
 However, for less demanding scenarios, the RDP library offers a good balance of ease of use vs performance. I have done some basic testing on my laptop and was able to stream 3000 LSE RICs without any issues - having said that, I was merely dumping the payloads to a file and not doing any further processing. I was not trying to push or test any limits.
 
